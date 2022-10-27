@@ -20,5 +20,7 @@ use App\Http\Controllers\ControladorVistas;
 
 Route::controller(ControladorVistas::class)->group(function(){
    Route::get('/','vistaFormulario')->name('for');
-   Route::get('/tabla','vistaTabla')->name('tab');
+   Route::get('tabla','vistaTabla')->name('tab');
 });
+
+Route::post('guardarFormulario', [ControladorVistas::class,'enviarFormulario'])->name('envfor');
